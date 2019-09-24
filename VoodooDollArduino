@@ -247,3 +247,35 @@ void Death()
   }
   //*********************************************************************************
   //Suffering code function
+  void suffer()
+{
+  bottom = digitalRead(bottomPin);
+  top = digitalRead(topPin);
+  heart = digitalRead(heartPin);
+
+
+  if (heart == 1)
+  {
+    suffering = 3;
+  }
+  
+  if (top == 1 && bottom == 0 && heart == 0)
+  {
+    suffering = 1;
+  }
+  
+  if (bottom == 1 && top == 0 && heart == 0)
+  {
+    suffering = 1;
+  }
+  
+  if (top == 1 && bottom == 1 && heart == 0)
+  {
+    suffering = 2;
+  }
+  
+  if (top == 0 && bottom == 0 && heart == 0)
+  {
+    suffering = 0;
+  }
+}
